@@ -1,0 +1,11 @@
+CHANGES
+lib/Template/Stash/Strict.pm
+Makefile.PL
+MANIFEST			This list of files
+ppport.h
+README
+Strict.xs
+t/stash.t
+t/stash_strict.t
+t/stash_strict_more.t
+META.yml                                 Module meta-data (added by MakeMaker)

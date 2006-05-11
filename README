@@ -1,0 +1,59 @@
+NAME
+    Template::Stash::Strict - Experimental strict high-speed stash written
+    in XS
+
+SYNOPSIS
+        use Template;
+        use Template::Stash::Strict;
+
+        my $stash = Template::Stash::Strict->new(\%vars);
+        my $tt2   = Template->new({ STASH => $stash });
+
+DESCRIPTION
+    This module loads the Strict XS version of Template::Stash::Strict. It
+    should behave very much like the XS one, but throw an exception when
+    attempting to return something which is undef. See the synopsis above
+    for usage information.
+
+    This behaves somewhat like Perl's "use strict" method.
+
+    Only a few methods (such as get and set) have been implemented in XS.
+    The others are inherited from Template::Stash.
+
+NOTE
+    To always use the Strict version of Stash, modify the Template/Config.pm
+    module near line 45:
+
+     $STASH    = 'Template::Stash::Strict';
+
+    If you make this change, then there is no need to explicitly create an
+    instance of Template::Stash::Strict as seen in the SYNOPSIS above. Just
+    use Template as normal.
+
+    Alternatively, in your code add this line before creating a Template
+    object:
+
+     $Template::Config::STASH = 'Template::Stash::Strict';
+
+    To use the original, pure-perl version restore this line in
+    Template/Config.pm:
+
+     $STASH    = 'Template::Stash';
+
+    Or in your code:
+
+     $Template::Config::STASH = 'Template::Stash';
+
+AUTHORS
+    Leon Brocard <acme@astray.com>
+
+COPYRIGHT
+      Copyright (C) 1996-2004 Andy Wardley.  All Rights Reserved.
+      Copyright (C) 1998-2002 Canon Research Centre Europe Ltd.
+    
+    This module is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
+SEE ALSO
+    Template::Stash, Template::Stash::XS
+

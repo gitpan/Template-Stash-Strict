@@ -10,19 +10,23 @@
 #========================================================================
 
 package Template::Stash::Strict;
+use strict;
+use warnings;
+use vars qw($AUTOLOAD $VERSION);
 
 use Template;
 use Template::Stash;
 
 BEGIN {
+  $VERSION = '2.15';
   require DynaLoader;
   @Template::Stash::Strict::ISA = qw( DynaLoader Template::Stash );
 
   eval {
-    bootstrap Template::Stash::Strict $Template::VERSION;
+    bootstrap Template::Stash::Strict $VERSION;
   };
   if ($@) {
-    die "Couldn't load Template::Stash::Strict $Template::VERSION:\n\n$@\n";
+    die "Couldn't load Template::Stash::Strict $VERSION:\n\n$@\n";
   }
 }
 
@@ -114,10 +118,15 @@ Or in your code:
 
 =head1 AUTHORS
 
-Leon Brocard E<lt>acme@astray.comE<gt>
+Andy Wardley   <abw@kfs.org>,
+Doug Steinwand <dsteinwand@citysearch.com>,
+Leon Brocard   <acme@astray.com>
+
+Many thanks to Foxtons Ltd.
 
 =head1 COPYRIGHT
 
+  Parts Copyright (C) 2006 Leon Brocard.  All Rights Reserved.
   Copyright (C) 1996-2004 Andy Wardley.  All Rights Reserved.
   Copyright (C) 1998-2002 Canon Research Centre Europe Ltd.
     

@@ -2,5 +2,8 @@ Revision history for Perl module Data::Page:
 
 This is the CHANGES file for Template::Stash::Strict:
 
+2.15 Fri May 12 11:47:53 BST 2006
+  - minor documentation changes
+
 2.14 Thu May 11 17:25:04 BST 2006
-        - initial release
+  - initial release

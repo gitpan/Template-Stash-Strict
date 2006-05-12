@@ -9,7 +9,7 @@ WriteMakefile(
     'C'         => [qw( Strict.c )],
     'XS'        => { 'Strict.xs' => 'Strict' },
     'OBJECT'    => 'Strict.o',
-    'VERSION'   => '2.14',
+    'VERSION'   => '2.15',
     'NORECURS'  => 1,
     'PREREQ_PM' => { 'Template' => '2.14', 'Test::Exception' => '0', },
 );
